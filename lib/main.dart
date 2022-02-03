@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:intl/intl.dart';
 
 const productsGraphQL = """
 query products{
@@ -87,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
           }
 
           final productList = result.data?["products"]["edges"];
+          final formatCurrency = new NumberFormat.simpleCurrency();
           // final productAmount =
           //     productList["node"]["pricing"]["priceRange"]["stop"]["gross"];
           // print(productList);
@@ -135,7 +137,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
-                            Text("\$" + productAmount.toString()),
+                            // Text("\$" + productAmount.toString()),
+                            Text(
+                              "${formatCurrency.format(productAmount)}",
+                              style: Theme.of(context).textTheme.subtitle1,
+                            ),
                             // Text("\$4.50"),
                           ],
                         );
