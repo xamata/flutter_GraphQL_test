@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:flutter_mobile_sim_test_1/products_page.dart';
+
+import 'products_page.dart';
 
 const productsGraphQL = """
 query products{
@@ -50,7 +52,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Flutter Demo",
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.red,
           fontFamily: "Raleway",
         ),
         home: const MyHomePage(title: "Flutter_GraphQL Home Page"));
@@ -66,8 +68,46 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //determines which page will show up
+  int _selectedIndexBottomNavigationItem = 0;
+  void onItemTapped(int index) {
+    setState(() {
+      _selectedIndexBottomNavigationItem = index;
+    });
+  }
+
+  //Navigation Bar, Chooses what is shown on app
+  static const List<Widget> _widgetOptions = <Widget>[
+    ProductsPage(),
+    ProductsPage(),
+    ProductsPage(),
+    ProductsPage(),
+    ProductsPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return const ProductsPage();
+    return Scaffold(
+      body: _widgetOptions.elementAt(_selectedIndexBottomNavigationItem),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        iconSize: 30.0,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.house), label: "House"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "AC"),
+          BottomNavigationBarItem(icon: Icon(Icons.headset), label: "Air"),
+          BottomNavigationBarItem(icon: Icon(Icons.shop), label: "Hair"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Hair"),
+        ],
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _selectedIndexBottomNavigationItem,
+        onTap: onItemTapped,
+      ),
+    );
+    // return const ProductsPage();
   }
 }

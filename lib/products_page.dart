@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobile_sim_test_1/palette.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:intl/intl.dart';
 
@@ -12,11 +11,10 @@ class ProductsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Products",
-          style: TextStyle(fontSize: 20, fontFamily: "Supermercado_One"),
-        ),
-        backgroundColor: Palette.gBlueColor.shade200,
+        title: const Text("What's New"),
+        backgroundColor: Colors.white,
+        titleTextStyle: const TextStyle(
+            color: Colors.black, fontSize: 26, fontFamily: "RaleWay"),
       ),
       body: Query(
         options: QueryOptions(
