@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobile_sim_test_1/account_page.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'products_page.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Flutter Demo",
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.green,
           fontFamily: "Raleway",
         ),
         home: const MyHomePage(title: "Flutter_GraphQL Home Page"));
@@ -79,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //Navigation Bar, Chooses what is shown on app
   static const List<Widget> _widgetOptions = <Widget>[
     ProductsPage(),
-    ProductsPage(),
+    AccountPage(),
     ProductsPage(),
     ProductsPage(),
     ProductsPage(),
