@@ -20,19 +20,23 @@ class _AccountPageState extends State<AccountPage> {
         // alignment: AlignmentDirectional.topStart,
         fit: StackFit.expand,
         children: [
-          const Image(
-              image: AssetImage('images/background.jpeg'),
-              fit: BoxFit.fill,
-              height: 200
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/background.jpeg"),
+                fit: BoxFit.cover,
+                alignment: Alignment(0.0, -5.0),
+              ),
 
               //     .cover, //as small as possible while still covering the entire target box
               // colorBlendMode: BlendMode.darken,
               // color: Colors.black54,
-              ),
+            ),
+          ),
           Column(
             // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Padding(
+            children: const <Widget>[
+              Padding(
                 padding: EdgeInsets.all(30.0),
                 child: Text(
                   "Sign in",
@@ -42,7 +46,7 @@ class _AccountPageState extends State<AccountPage> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 20, right: 20, bottom: 30),
                 child: Text(
                   "Become a member to enjoy exclusive savings on your favorite items.",
