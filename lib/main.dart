@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_sim_test_1/account_page.dart';
+import 'package:flutter_mobile_sim_test_1/cart_page.dart';
+import 'package:flutter_mobile_sim_test_1/favorties_page.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'products_page.dart';
@@ -81,8 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     ProductsPage(),
     AccountPage(),
-    ProductsPage(),
-    ProductsPage(),
+    FavortiesPage(),
+    CartPage(),
     ProductsPage(),
   ];
 
@@ -95,11 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
         iconSize: 30.0,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.house), label: "House"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "AC"),
-          BottomNavigationBarItem(icon: Icon(Icons.headset), label: "Air"),
-          BottomNavigationBarItem(icon: Icon(Icons.shop), label: "Hair"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Hair"),
+              icon: Icon(CupertinoIcons.house), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.person), label: "Account"),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.heart), label: "Favorites"),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.settings), label: "Settings"),
         ],
         showUnselectedLabels: false,
         showSelectedLabels: false,

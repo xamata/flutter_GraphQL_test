@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text("What's New"),
           backgroundColor: Colors.white,
+          elevation: 0,
           titleTextStyle: const TextStyle(
               color: Colors.black, fontSize: 26, fontFamily: "RaleWay"),
         ),
