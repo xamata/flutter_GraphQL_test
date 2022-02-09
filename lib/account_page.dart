@@ -115,7 +115,7 @@ class _AccountPageState extends State<AccountPage> {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              ForgotPasswordPage()),
+                                              ForgotPasswordForm()),
                                     );
                                   },
                                   style: ButtonStyle(
@@ -165,6 +165,7 @@ class ForgotPasswordPage extends StatefulWidget {
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final _controller = TextEditingController();
   final _submittedController = TextEditingController();
+  // String _errorText = '';
 
   // dispose it when the widget is unmounted
   @override
@@ -174,30 +175,27 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   }
 
   checkEmail() {
+    // outcome = Tuple2<bool, String>(false, _errorText);
     if (EmailValidator.validate(_controller.text)) {
-      _controller.text = 'Sumbitted';
+      _controller.text = '';
+      // _errorText = '';
       return true;
-    } else {}
+    } else {
+      // _errorText = "Enter a valid email";
+      return false;
+    }
   }
 
-  errorText() {
-    String _errorText;
-
+  String? get _errorText {
     // at any time, we can get the text from _controller.value.text
     final text = _controller.text;
     // Note: you can do your own custom validation here
     // Move this logic this outside the widget for more testable code
-    if (text.isEmpty) {
-      return 'Can\'t be empty';
+    if (EmailValidator.validate(text)) {
+      return '';
+    } else {
+      return "Enter a valid email";
     }
-    if (text.length < 4) {
-      return 'Too short';
-    }
-    if (EmailValidator.validate(_controller.text)) {
-      return 'Sure is an email';
-    }
-    // return null if the text is valid
-    return null;
   }
 
   @override
@@ -232,7 +230,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     autofocus: true,
                     decoration: InputDecoration(
                         hintText: "Email",
-                        errorText: errorText(),
+                        errorText: _errorText,
                         filled: true,
                         border: InputBorder.none),
                   ),
@@ -245,7 +243,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     height: 50,
                     child: TextButton(
                       onPressed: () {
-                        if (checkEmail()) {}
+                        checkEmail();
                       },
                       child: const Text(
                         "SUBMIT",
@@ -256,6 +254,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             fontWeight: FontWeight.bold),
                       ),
                       style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.all(Colors.grey),
                         backgroundColor:
                             MaterialStateProperty.all(Colors.black),
                         shape:
@@ -274,5 +273,116 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         ],
       ),
     );
+  }
+}
+
+class ForgotPasswordForm extends StatefulWidget {
+  const ForgotPasswordForm({Key? key}) : super(key: key);
+
+  @override
+  _ForgotPasswordFormState createState() => _ForgotPasswordFormState();
+}
+
+// defind a corresponding state class
+// this class holds data related to the form
+class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
+  @override
+  Widget build(BuildContext context) {
+    // create a global key that identifies the form widget
+    // allows validation of the form
+    final _formKey = GlobalKey<FormState>();
+    return Form(
+        key: _formKey,
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+              elevation: 0,
+              title: const Text("Fogot Password?",
+                  style: TextStyle(fontSize: 24))),
+          // body: SingleChildScrollView(child:
+          body: Stack(
+            // alignment: AlignmentDirectional.topStart,
+            fit: StackFit.expand,
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(30.0),
+                      child: Text(
+                        "Enter your email below to recover your password",
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: TextFormField(
+                        //validator
+                        validator: (value) {
+                          if (EmailValidator.validate(value!)) {
+                            return null;
+                          } else {
+                            return "Please enter a valid email";
+                          }
+                        },
+                        // controller: _controller,
+                        autocorrect: false,
+                        autofocus: true,
+                        decoration: InputDecoration(
+                            hintText: "Email",
+                            // errorText: _errorText,
+                            filled: true,
+                            border: InputBorder.none),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 20),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: TextButton(
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("Submitted!"),
+                                ),
+                              );
+                            }
+                            // checkEmail();
+                          },
+                          child: const Text(
+                            "SUBMIT",
+                            style: TextStyle(
+                                fontSize: 16,
+                                letterSpacing: 10,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          style: ButtonStyle(
+                            overlayColor:
+                                MaterialStateProperty.all(Colors.grey),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.black),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }
