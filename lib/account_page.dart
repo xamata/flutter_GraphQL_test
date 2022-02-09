@@ -1,5 +1,5 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobile_sim_test_1/products_page.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -9,15 +9,6 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
-  final _controller = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    // Future.delayed(
-    //     const Duration(milliseconds: 2000), () => _controller.text = '');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,23 +57,21 @@ class _AccountPageState extends State<AccountPage> {
                   children: <Widget>[
                     SingleChildScrollView(
                       child: Container(
-                        // height: 300,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
                         child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             TextField(
                               autocorrect: false,
                               autofocus: false,
-                              style: TextStyle(fontSize: 18),
-                              controller: _controller,
+                              style: const TextStyle(fontSize: 18),
+                              // controller: _controller,
                               decoration: InputDecoration(
                                 hintText: 'UserName',
                                 border: InputBorder.none,
                                 filled: true,
                                 fillColor: Colors.grey[200],
-                                contentPadding: EdgeInsets.all(10.0),
+                                contentPadding: const EdgeInsets.all(10.0),
                               ),
                             ),
                             Padding(
@@ -93,12 +82,12 @@ class _AccountPageState extends State<AccountPage> {
                                 autocorrect: false,
                                 autofocus: false,
                                 obscureText: false,
-                                style: TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 18),
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   filled: true,
                                   fillColor: Colors.grey[200],
-                                  contentPadding: EdgeInsets.all(10.0),
+                                  contentPadding: const EdgeInsets.all(10.0),
                                 ),
                               ),
                             ),
@@ -139,10 +128,10 @@ class _AccountPageState extends State<AccountPage> {
                             ),
                             RawMaterialButton(
                               onPressed: () {},
-                              constraints: BoxConstraints(minWidth: 200),
+                              constraints: const BoxConstraints(minWidth: 300),
                               splashColor: Colors.black12,
-                              fillColor: Colors.red,
-                              padding: EdgeInsets.symmetric(vertical: 12),
+                              fillColor: Colors.black,
+                              padding: const EdgeInsets.symmetric(vertical: 12),
                               child: const Text(
                                 "Login",
                                 style: TextStyle(
@@ -164,8 +153,52 @@ class _AccountPageState extends State<AccountPage> {
   }
 }
 
-class ForgotPasswordPage extends StatelessWidget {
-  const ForgotPasswordPage({Key? key}) : super(key: key);
+class ForgotPasswordPage extends StatefulWidget {
+  ForgotPasswordPage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+}
+
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  final _controller = TextEditingController();
+  final _submittedController = TextEditingController();
+
+  // dispose it when the widget is unmounted
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  checkEmail() {
+    if (EmailValidator.validate(_controller.text)) {
+      _controller.text = 'Sumbitted';
+      return true;
+    } else {}
+  }
+
+  errorText() {
+    String _errorText;
+
+    // at any time, we can get the text from _controller.value.text
+    final text = _controller.text;
+    // Note: you can do your own custom validation here
+    // Move this logic this outside the widget for more testable code
+    if (text.isEmpty) {
+      return 'Can\'t be empty';
+    }
+    if (text.length < 4) {
+      return 'Too short';
+    }
+    if (EmailValidator.validate(_controller.text)) {
+      return 'Sure is an email';
+    }
+    // return null if the text is valid
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +208,7 @@ class ForgotPasswordPage extends StatelessWidget {
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
           elevation: 0,
-          title: Text("Fogot Password", style: TextStyle(fontSize: 24))),
+          title: const Text("Fogot Password?", style: TextStyle(fontSize: 24))),
       // body: SingleChildScrollView(child:
       body: Stack(
         // alignment: AlignmentDirectional.topStart,
@@ -183,17 +216,58 @@ class ForgotPasswordPage extends StatelessWidget {
         children: [
           SingleChildScrollView(
             child: Column(
-              children: <Widget>[
+              children: [
                 const Padding(
                   padding: EdgeInsets.all(30.0),
                   child: Text(
-                    "Enter email below to recover your passwrod",
-                    style: TextStyle(
-                        fontFamily: "RaleWay",
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold),
+                    "Enter your email below to recover your password",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: TextField(
+                    controller: _controller,
+                    autocorrect: false,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                        hintText: "Email",
+                        errorText: errorText(),
+                        filled: true,
+                        border: InputBorder.none),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        if (checkEmail()) {}
+                      },
+                      child: const Text(
+                        "SUBMIT",
+                        style: TextStyle(
+                            fontSize: 16,
+                            letterSpacing: 10,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.black),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

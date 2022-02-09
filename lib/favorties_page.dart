@@ -14,7 +14,7 @@ class _FavortiesPageState extends State<FavortiesPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Your Favorites",
           style: TextStyle(fontSize: 24, color: Colors.black),
         ),
@@ -23,21 +23,19 @@ class _FavortiesPageState extends State<FavortiesPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            child: Text(
-              "You Have No Favorties",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-            ),
+          const Text(
+            "You Have No Favorties",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
           ),
           Container(
-            child: Text(
+            child: const Text(
               "Sign in to your members account to save your favorites.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
             alignment: Alignment.topCenter,
             // color: Colors.blue,
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 50),
+            margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 50),
           ),
         ],
       ),
