@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -10,26 +11,29 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              image: DecorationImage(
-                image: AssetImage("images/background.jpeg"),
-                fit: BoxFit.cover,
-                alignment: Alignment(0.0, -5.0),
+    // create a global key that can provide validation
+    final _formKey = GlobalKey<FormState>();
+    return Form(
+      key: _formKey,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                  image: AssetImage("images/background.jpeg"),
+                  fit: BoxFit.cover,
+                  alignment: Alignment(0.0, -5.0),
+                ),
               ),
             ),
-          ),
-          SingleChildScrollView(
-            child: Form(
+            SingleChildScrollView(
               child: Column(
                 children: <Widget>[
                   const Padding(
@@ -60,11 +64,17 @@ class _SettingsPageState extends State<SettingsPage> {
                               horizontal: 20, vertical: 10),
                           child: Column(
                             children: [
-                              TextField(
+                              TextFormField(
+                                validator: (value) {
+                                  if (EmailValidator.validate(value!)) {
+                                    return null;
+                                  } else {
+                                    return "Please enter a valid Username";
+                                  }
+                                },
                                 autocorrect: false,
                                 autofocus: false,
                                 style: const TextStyle(fontSize: 18),
-                                // controller: _controller,
                                 decoration: InputDecoration(
                                   hintText: 'UserName',
                                   border: InputBorder.none,
@@ -77,10 +87,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 25,
                                 ),
-                                child: TextField(
+                                child: TextFormField(
                                   autocorrect: false,
                                   autofocus: false,
-                                  obscureText: false,
+                                  obscureText: true,
                                   style: const TextStyle(fontSize: 18),
                                   decoration: InputDecoration(
                                     hintText: "Password",
@@ -110,7 +120,15 @@ class _SettingsPageState extends State<SettingsPage> {
                                 ],
                               ),
                               RawMaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text("Submitted!"),
+                                      ),
+                                    );
+                                  }
+                                },
                                 constraints:
                                     const BoxConstraints(minWidth: 300),
                                 splashColor: Colors.black12,
@@ -132,8 +150,8 @@ class _SettingsPageState extends State<SettingsPage> {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

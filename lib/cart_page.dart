@@ -13,7 +13,7 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "Your Cart",
             style: TextStyle(fontSize: 24, color: Colors.black),
           ),
@@ -29,10 +29,10 @@ class _CartPageState extends State<CartPage> {
                 width: MediaQuery.of(context).size.width,
                 height: 200,
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 // child: ,
               ),
-              Text(
+              const Text(
                 "hello",
                 style: TextStyle(fontSize: 50),
                 textAlign: TextAlign.center,
@@ -42,10 +42,10 @@ class _CartPageState extends State<CartPage> {
                 width: MediaQuery.of(context).size.width,
                 height: 200,
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 // child: ,
               ),
-              Text(
+              const Text(
                 "hello",
                 style: TextStyle(fontSize: 50),
                 textAlign: TextAlign.center,
@@ -55,10 +55,10 @@ class _CartPageState extends State<CartPage> {
                 width: MediaQuery.of(context).size.width,
                 height: 200,
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 // child: ,
               ),
-              Text(
+              const Text(
                 "hello",
                 style: TextStyle(fontSize: 50),
                 textAlign: TextAlign.center,
@@ -68,7 +68,7 @@ class _CartPageState extends State<CartPage> {
                 width: MediaQuery.of(context).size.width,
                 height: 200,
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(20.0),
                 // child: ,
               ),
             ],
