@@ -8,15 +8,25 @@ class AccountPage extends StatefulWidget {
   _AccountPageState createState() => _AccountPageState();
 }
 
-//  {
-//                                     Navigator.of(context).push(
-//                                       MaterialPageRoute(
-//                                           builder: (context) =>
-//                                               const ForgotPasswordForm()),
-//                                     );
-//                                   },
-
 class _AccountPageState extends State<AccountPage> {
+  bool _obscureText = true;
+  bool _passswordVisible = false;
+
+  void _toggleObscureText() {
+    setState(() {
+      _obscureText = !_obscureText;
+      _passswordVisible = !_passswordVisible;
+    });
+  }
+
+  String? get _showHideString {
+    if (!_passswordVisible) {
+      return "Show";
+    } else {
+      return "Hide";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // create a global key that can provide validation
@@ -37,7 +47,7 @@ class _AccountPageState extends State<AccountPage> {
                 image: DecorationImage(
                   image: AssetImage("images/background.jpeg"),
                   fit: BoxFit.cover,
-                  alignment: Alignment(0.0, -5.0),
+                  alignment: Alignment(0.0, -7.0),
                 ),
               ),
             ),
@@ -95,18 +105,45 @@ class _AccountPageState extends State<AccountPage> {
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 25,
                                 ),
-                                child: TextFormField(
-                                  autocorrect: false,
-                                  autofocus: false,
-                                  obscureText: true,
-                                  style: const TextStyle(fontSize: 18),
-                                  decoration: InputDecoration(
-                                    hintText: "Password",
-                                    filled: true,
-                                    fillColor: Colors.grey[200],
-                                    contentPadding: const EdgeInsets.all(10.0),
+                                child: Stack(children: <Widget>[
+                                  TextFormField(
+                                    autocorrect: false,
+                                    autofocus: false,
+                                    obscureText: _obscureText,
+                                    style: const TextStyle(fontSize: 18),
+                                    decoration: InputDecoration(
+                                      hintText: "Password",
+                                      filled: true,
+                                      fillColor: Colors.grey[200],
+                                      contentPadding:
+                                          const EdgeInsets.all(10.0),
+                                    ),
                                   ),
-                                ),
+                                  Container(
+                                      alignment: Alignment.bottomRight,
+                                      child: TextButton(
+                                        onPressed: () {
+                                          _toggleObscureText();
+                                        },
+                                        child: Text(_showHideString!),
+                                        style: ButtonStyle(
+                                            overlayColor:
+                                                MaterialStateProperty.all(
+                                                    Colors.transparent)
+                                            // MaterialStateProperty
+                                            //     .resolveWith<Color?>(
+                                            //         (Set<MaterialState> states) {
+                                            //   if (states.contains(
+                                            //       MaterialState.pressed)) {
+                                            //     return Theme.of(context)
+                                            //         .colorScheme
+                                            //         .primary
+                                            //         .withOpacity(0);
+                                            //   }
+                                            // }),
+                                            ),
+                                      ))
+                                ]),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
@@ -129,13 +166,15 @@ class _AccountPageState extends State<AccountPage> {
                                     style: ButtonStyle(
                                         overlayColor:
                                             MaterialStateProperty.all<Color>(
-                                      Colors.white,
+                                      Colors.transparent,
                                     )),
                                   ),
                                 ],
                               ),
                               RawMaterialButton(
                                 onPressed: () {
+                                  // TODO: Checks if username and password is in the system, this will bring to real account page
+                                  // if not, replies, please enter a valid username and password
                                   if (_formKey.currentState!.validate()) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
@@ -153,7 +192,9 @@ class _AccountPageState extends State<AccountPage> {
                                 child: const Text(
                                   "Login",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 15),
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ],
