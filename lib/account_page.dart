@@ -36,17 +36,19 @@ class _AccountPageState extends State<AccountPage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
           elevation: 0,
         ),
         body: Stack(
-          fit: StackFit.expand,
           children: [
             Container(
+              width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 image: DecorationImage(
                   image: AssetImage("images/background.jpeg"),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fitWidth,
+                  //---------sets the position of image------------
                   alignment: Alignment(0.0, -7.0),
                 ),
               ),
@@ -173,6 +175,7 @@ class _AccountPageState extends State<AccountPage> {
                               ),
                               RawMaterialButton(
                                 onPressed: () {
+                                  // ignore: todo
                                   // TODO: Checks if username and password is in the system, this will bring to real account page
                                   // if not, replies, please enter a valid username and password
                                   if (_formKey.currentState!.validate()) {
