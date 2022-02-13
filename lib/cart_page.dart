@@ -139,22 +139,72 @@ class _CartPageState extends State<CartPage> {
                   ),
                 ),
                 //TODO: Create cc Icons
-                // Container(
-                //   width: double.infinity,
-                //   height: 100,
-                //   child: Row(
-                //     children: [
-                //       Container(
-                //         width: double.infinity,
-                //         decoration: const BoxDecoration(
-                //           image: DecorationImage(
-                //               image: AssetImage("images/background.jpeg"),
-                //               fit: BoxFit.fitWidth),
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("Credit we trust:"),
+                    Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.all(3),
+                      child: Container(
+                        width: 40,
+                        height: 30,
+                        decoration: const BoxDecoration(
+                          color: Colors.blue,
+                          image: DecorationImage(
+                              image: AssetImage("images/credit_icons_1.jpg"),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3),
+                      child: Container(
+                        width: 40,
+                        height: 30,
+                        decoration: const BoxDecoration(
+                          color: Colors.blue,
+                          image: DecorationImage(
+                              image: AssetImage("images/credit_icons_2.jpg"),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3),
+                      child: Container(
+                        width: 40,
+                        height: 30,
+                        decoration: const BoxDecoration(
+                          color: Colors.blue,
+                          image: DecorationImage(
+                              image: AssetImage("images/credit_icons_3.jpg"),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3),
+                      child: Container(
+                        width: 40,
+                        height: 30,
+                        decoration: const BoxDecoration(
+                          color: Colors.blue,
+                          image: DecorationImage(
+                              image: AssetImage("images/credit_icons_4.jpg"),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Divider(
+                    thickness: 2,
+                    color: Colors.grey,
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Container(
