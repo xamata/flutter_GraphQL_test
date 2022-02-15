@@ -10,7 +10,9 @@ class ProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        elevation: 0,
         title: const Text("What's New"),
         backgroundColor: Colors.white,
         titleTextStyle: const TextStyle(
@@ -39,17 +41,6 @@ class ProductsPage extends StatelessWidget {
 
           return Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                // child: Text(
-                //   "Products",
-                //   style: TextStyle(
-                //     color: Colors.black45,
-                //     fontWeight: FontWeight.bold,
-                //     fontSize: 28,
-                //   ),
-                // ),
-              ),
               Expanded(
                   child: GridView.builder(
                       gridDelegate:
