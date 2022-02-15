@@ -22,171 +22,164 @@ class _SettingsPageState extends State<SettingsPage> {
         foregroundColor: Colors.black,
         elevation: 0,
       ),
-      body: ListView(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300,
-                ),
-              ),
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Row(
-              children: [
-                TextButton(
-                  child: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  onPressed: () {},
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                ),
-              ],
-            ),
+      body: Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: ListView(
+            children: [
+              accountButtonUI(),
+              customerServiceButtonUI(),
+              storeLocatorButtonUI(),
+              socialLinksButtonUI(),
+              giftCardButtonUI(),
+              appSettingsButtonUI(),
+            ],
           ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300,
-                ),
-              ),
+        ),
+      ),
+    );
+  }
+
+  Widget accountButtonUI() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0.0),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
+      ),
+      child: Container(
+        height: 50,
+        child: Row(
+          children: const [
+            Text(
+              "Account",
+              style: TextStyle(fontSize: 18, color: Colors.black),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Row(
-              children: [
-                TextButton(
-                  child: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  onPressed: () {},
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                ),
-              ],
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.black)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget customerServiceButtonUI() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0.0),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
+      ),
+      child: Container(
+        height: 50,
+        child: Row(
+          children: const [
+            Text(
+              "Cusotomer Service",
+              style: TextStyle(fontSize: 18, color: Colors.black),
             ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300,
-                ),
-              ),
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.black)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget storeLocatorButtonUI() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0.0),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
+      ),
+      child: Container(
+        height: 50,
+        child: Row(
+          children: const [
+            Text(
+              "Store Locator",
+              style: TextStyle(fontSize: 18, color: Colors.black),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Row(
-              children: [
-                TextButton(
-                  child: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  onPressed: () {},
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                ),
-              ],
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.black)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget socialLinksButtonUI() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0.0),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
+      ),
+      child: Container(
+        height: 50,
+        child: Row(
+          children: const [
+            Text(
+              "Follow Us",
+              style: TextStyle(fontSize: 18, color: Colors.black),
             ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300,
-                ),
-              ),
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.black)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget giftCardButtonUI() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0.0),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
+      ),
+      child: Container(
+        height: 50,
+        child: Row(
+          children: const [
+            Text(
+              "Gift Card",
+              style: TextStyle(fontSize: 18, color: Colors.black),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Row(
-              children: [
-                TextButton(
-                  child: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  onPressed: () {},
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                ),
-              ],
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.black)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget appSettingsButtonUI() {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0.0),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
+      ),
+      child: Container(
+        height: 50,
+        child: Row(
+          children: const [
+            Text(
+              "App Settings",
+              style: TextStyle(fontSize: 18, color: Colors.black),
             ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300,
-                ),
-              ),
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Row(
-              children: [
-                TextButton(
-                  child: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  onPressed: () {},
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  width: 1,
-                  color: Colors.grey.shade300,
-                ),
-              ),
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-            child: Row(
-              children: [
-                TextButton(
-                  child: Text(
-                    "Account",
-                    style: TextStyle(fontSize: 18, color: Colors.black),
-                  ),
-                  onPressed: () {},
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                ),
-              ],
-            ),
-          ),
-        ],
+            Spacer(),
+            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.black)
+          ],
+        ),
       ),
     );
   }
