@@ -35,9 +35,6 @@ class ProductsPage extends StatelessWidget {
 
           final productList = result.data?["products"]["edges"];
           final formatCurrency = NumberFormat.simpleCurrency();
-          // final productAmount =
-          //     productList["node"]["pricing"]["priceRange"]["stop"]["gross"];
-          // print(productList);
 
           return Column(
             children: [
@@ -51,7 +48,6 @@ class ProductsPage extends StatelessWidget {
                               childAspectRatio: 0.75),
                       itemCount: productList.length,
                       itemBuilder: (context, index) {
-                        // return Text(productList[index]["node"]["name"]);
                         var product = productList[index]["node"];
                         var productAmount = product["pricing"]["priceRange"]
                             ["stop"]["gross"]["amount"];

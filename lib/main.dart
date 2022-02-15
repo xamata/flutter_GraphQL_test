@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobile_sim_test_1/account_page.dart';
 import 'package:flutter_mobile_sim_test_1/cart_page.dart';
 import 'package:flutter_mobile_sim_test_1/favorties_page.dart';
+import 'package:flutter_mobile_sim_test_1/home_page.dart';
 import 'package:flutter_mobile_sim_test_1/settings_page.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'home_page.dart';
 
 import 'products_page.dart';
 
@@ -82,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //Navigation Bar, Chooses what is shown on app
   static const List<Widget> _widgetOptions = <Widget>[
-    ProductsPage(),
+    HomePage(),
     AccountPage(),
     FavortiesPage(),
     CartPage(),

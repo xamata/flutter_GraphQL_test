@@ -15,38 +15,26 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.white, //DesignCourseAppTheme.nearlyWhite,
-      child: PageView(
-        scrollDirection: Axis.vertical,
-        children: [
-          Scaffold(
-            backgroundColor: Colors.white,
-            appBar: AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0,
-              title: const Text(
-                "Your Cart",
-                style: TextStyle(color: Colors.black, fontSize: 24),
-              ),
-            ),
-            body: SafeArea(
-              child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                children: <Widget>[
-                  // getAppBarUI(),
-                  getShoppingCartUI(),
-                  getLoginUI(),
-                  getDiscountUI(),
-                  getMoreProudctsUI(),
-                  // getCategoryUI(),
-                  // getPopularCourseUI(),
-                  // const Products(),
-                ],
-              ),
-            ),
-          ),
-        ],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          "Your Cart",
+          style: TextStyle(color: Colors.black, fontSize: 24),
+        ),
+      ),
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          children: <Widget>[
+            getShoppingCartUI(),
+            getLoginUI(),
+            getDiscountUI(),
+            getMoreProudctsUI(),
+          ],
+        ),
       ),
     );
   }
@@ -353,13 +341,18 @@ class ProductsGridView extends StatelessWidget {
                     child: Image.network(product["thumbnail"]["url"]),
                   ),
                   Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Text(
-                        product["name"],
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      product["name"],
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    formatCurrency.format(productAmount),
+                    style: Theme.of(context).textTheme.subtitle1,
+                  )
                 ],
               );
             });
@@ -376,8 +369,8 @@ class GamesGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      shrinkWrap: true, //TODO: must be included
-      physics: const ClampingScrollPhysics(), //TODO: must be included
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
       crossAxisCount: 2,
       mainAxisSpacing: 50.0,
       crossAxisSpacing: 50.0,

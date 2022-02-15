@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:intl/intl.dart';
-
-import 'account_page.dart';
-import 'main.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -17,7 +12,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
+        title: const Text("Settings"),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -48,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: MaterialStateProperty.all(Colors.white),
         overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
       ),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           children: const [
@@ -72,7 +67,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: MaterialStateProperty.all(Colors.white),
         overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
       ),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           children: const [
@@ -96,7 +91,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: MaterialStateProperty.all(Colors.white),
         overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
       ),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           children: const [
@@ -120,7 +115,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: MaterialStateProperty.all(Colors.white),
         overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
       ),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           children: const [
@@ -144,7 +139,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: MaterialStateProperty.all(Colors.white),
         overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
       ),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           children: const [
@@ -168,7 +163,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: MaterialStateProperty.all(Colors.white),
         overlayColor: MaterialStateProperty.all(Colors.grey.shade200),
       ),
-      child: Container(
+      child: SizedBox(
         height: 50,
         child: Row(
           children: const [
