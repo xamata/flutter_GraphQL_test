@@ -234,7 +234,7 @@ class _CartPageState extends State<CartPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(3),
+              padding: const EdgeInsets.all(3.0),
               child: Container(
                 width: 40,
                 height: 30,
