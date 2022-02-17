@@ -27,7 +27,6 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 5),
             sliderTitleUI(),
             sliderUI(),
-            const SizedBox(height: 20),
             box3UI(),
             const SizedBox(height: 20),
             categoryListUI(),
@@ -91,151 +90,209 @@ class _HomePageState extends State<HomePage> {
 
   Widget sliderTitleUI() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-      child: Container(
-        child: const Text(
-          "Categories",
-          style: TextStyle(
-            fontSize: 20,
-          ),
-          textAlign: TextAlign.start,
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+      child: const Text(
+        "Categories",
+        style: TextStyle(
+          fontSize: 20,
         ),
+        textAlign: TextAlign.start,
       ),
     );
   }
 
   Widget sliderUI() {
-    return Container(
-      height: 100,
+    return SizedBox(
+      height: 120,
       child: ElevatedButtonTheme(
         data: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: Colors.orange.shade100,
-            shape: CircleBorder(),
-            onPrimary: Colors.black,
-            elevation: 0,
-          ),
+              primary: Colors.orange.shade100,
+              shape: const CircleBorder(),
+              onPrimary: Colors.black,
+              elevation: 0,
+              splashFactory: NoSplash.splashFactory),
         ),
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: [
-            Container(
-              width: 90,
+            SizedBox(
+              width: 75,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Men"),
+                      child: const Text("Men"),
                     ),
                   ),
-                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
-                  Text(
-                    "Hoodies & Sweatshirts",
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )
+                  SizedBox(
+                    height: 40,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        Text("Men",
+                            style: TextStyle(color: Colors.grey.shade700)),
+                        const Text(
+                          "Hoodies & Sweatshirts",
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Container(
-              width: 90,
+            SizedBox(
+              width: 75,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Men"),
+                      child: const Text("Men"),
                     ),
                   ),
-                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
-                  Text(
-                    "Hoodies & Sweatshirts",
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )
+                  SizedBox(
+                    height: 40,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        Text("Men",
+                            style: TextStyle(color: Colors.grey.shade700)),
+                        const Text(
+                          "Pants",
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Container(
-              width: 90,
+            SizedBox(
+              width: 75,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Men"),
+                      child: const Text("Men"),
                     ),
                   ),
-                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
-                  Text(
-                    "Hoodies & Sweatshirts",
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )
+                  SizedBox(
+                    height: 40,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        Text("Men",
+                            style: TextStyle(color: Colors.grey.shade700)),
+                        const Text(
+                          "T-shirts & Tanks",
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Container(
-              width: 90,
+            SizedBox(
+              width: 75,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Men"),
+                      child: const Text("Men"),
                     ),
                   ),
-                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
-                  Text(
-                    "Hoodies & Sweatshirts",
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )
+                  SizedBox(
+                    height: 40,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        Text("Men",
+                            style: TextStyle(color: Colors.grey.shade700)),
+                        const Text(
+                          "Jackets & Coats",
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Container(
-              width: 90,
+            SizedBox(
+              width: 75,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Men"),
+                      child: const Text("Men"),
                     ),
                   ),
-                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
-                  Text(
-                    "Hoodies & Sweatshirts",
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )
+                  SizedBox(
+                    height: 40,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        Text("Men",
+                            style: TextStyle(color: Colors.grey.shade700)),
+                        const Text(
+                          "Clothes",
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Container(
-              width: 90,
+            SizedBox(
+              width: 75,
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 60,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Men"),
+                      child: const Text("Men"),
                     ),
                   ),
-                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
-                  Text(
-                    "Hoodies & Sweatshirts",
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )
+                  SizedBox(
+                    height: 40,
+                    width: 60,
+                    child: Column(
+                      children: [
+                        Text("Men",
+                            style: TextStyle(color: Colors.grey.shade700)),
+                        const Text(
+                          "Jeans",
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
