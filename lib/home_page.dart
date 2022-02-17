@@ -49,12 +49,45 @@ class _HomePageState extends State<HomePage> {
       child: ElevatedButton(
         onPressed: () {},
         child: Stack(
-          children: const [
-            Image(
+          children: [
+            const Image(
               width: 400,
               image: AssetImage("images/home_page_1.png"),
               fit: BoxFit.fitWidth,
               alignment: Alignment(0.0, -0.8),
+            ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.7, 1],
+                  colors: [
+                    Colors.transparent,
+                    Colors.grey.withOpacity(0.5),
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Comfortably Styling",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 34,
+                            fontWeight: FontWeight.bold)),
+                    Text("Put your best foot forward",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        )),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -72,12 +105,45 @@ class _HomePageState extends State<HomePage> {
       child: ElevatedButton(
         onPressed: () {},
         child: Stack(
-          children: const [
+          children: [
             Image(
               width: 400,
               image: AssetImage("images/home_page_2.png"),
               fit: BoxFit.fitWidth,
               alignment: Alignment(0.0, -0.8),
+            ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.7, 1],
+                  colors: [
+                    Colors.transparent,
+                    Colors.grey.withOpacity(0.5),
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Soft Tailoring",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold)),
+                    Text("Get yourself something snazzy",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        )),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -309,12 +375,45 @@ class _HomePageState extends State<HomePage> {
       child: ElevatedButton(
         onPressed: () {},
         child: Stack(
-          children: const [
+          children: [
             Image(
               width: 400,
-              image: AssetImage("images/home_page_1.png"),
+              image: AssetImage("images/home_page_3.jpeg"),
               fit: BoxFit.fitWidth,
-              alignment: Alignment(0.0, -0.8),
+              alignment: Alignment(0.0, -0.0),
+            ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.7, 1],
+                  colors: [
+                    Colors.transparent,
+                    Colors.grey.withOpacity(0.5),
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Beautiful Outwear",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold)),
+                    Text("Get some sun on your face",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        )),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -506,12 +605,45 @@ class _HomePageState extends State<HomePage> {
       child: ElevatedButton(
         onPressed: () {},
         child: Stack(
-          children: const [
+          children: [
             Image(
               width: 400,
-              image: AssetImage("images/home_page_1.png"),
+              image: AssetImage("images/home_page_4.jpg"),
               fit: BoxFit.fitWidth,
-              alignment: Alignment(0.0, -0.8),
+              alignment: Alignment(0.0, -0.2),
+            ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.7, 1],
+                  colors: [
+                    Colors.transparent,
+                    Colors.grey.withOpacity(0.6),
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Find your style",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold)),
+                    Text("Strut what your momma gave you",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        )),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -529,12 +661,47 @@ class _HomePageState extends State<HomePage> {
       child: ElevatedButton(
         onPressed: () {},
         child: Stack(
-          children: const [
+          children: [
             Image(
               width: 400,
-              image: AssetImage("images/home_page_1.png"),
+              image: AssetImage("images/home_page_5.jpg"),
               fit: BoxFit.fitWidth,
               alignment: Alignment(0.0, -0.8),
+            ),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.7, 1],
+                  colors: [
+                    Colors.transparent,
+                    Colors.grey.withOpacity(0.5),
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Peace of Mind",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold)),
+                      Text("Your shirts are going to last",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          )),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -549,13 +716,12 @@ class _HomePageState extends State<HomePage> {
     return Container(
       alignment: Alignment.topCenter,
       color: Colors.orange.shade100,
-      height: 1350,
+      height: 1025,
       width: double.infinity,
       child: ListView(
         physics: const ClampingScrollPhysics(),
         shrinkWrap: true,
         children: [
-          // const SizedBox(height: 20),
           const Padding(
             padding: EdgeInsets.all(20.0),
             child: Text(
@@ -564,95 +730,90 @@ class _HomePageState extends State<HomePage> {
               textAlign: TextAlign.center,
             ),
           ),
-          Container(
-            height: 300,
-            color: Colors.transparent,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Stack(
-                children: const [
-                  Image(
-                    width: 400,
-                    image: AssetImage("images/home_page_1.png"),
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment(0.0, -0.8),
-                  ),
-                ],
-              ),
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  elevation: MaterialStateProperty.all(0)),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MagzineExamplePage()));
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              onSurface: Colors.transparent,
+              shadowColor: Colors.transparent,
+              splashFactory: NoSplash.splashFactory,
+              elevation: 0,
+            ),
+            child: Stack(
+              children: [
+                const Image(
+                  width: 400,
+                  height: 300,
+                  image: AssetImage("images/home_page_mag_1.jpeg"),
+                  fit: BoxFit.fitHeight,
+                  alignment: Alignment(0.0, -0.8),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 20),
-          Container(
-            height: 300,
-            color: Colors.transparent,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Stack(
-                children: const [
-                  Image(
-                    width: 400,
-                    image: AssetImage("images/home_page_1.png"),
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment(0.0, -0.8),
-                  ),
-                ],
-              ),
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  elevation: MaterialStateProperty.all(0)),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MagzineExamplePage()));
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              onSurface: Colors.transparent,
+              shadowColor: Colors.transparent,
+              splashFactory: NoSplash.splashFactory,
+              elevation: 0,
+            ),
+            child: Stack(
+              children: const [
+                Image(
+                  height: 300,
+                  image: AssetImage("images/home_page_mag_2.jpeg"),
+                  fit: BoxFit.fitHeight,
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 20),
-          Container(
-            height: 300,
-            color: Colors.transparent,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Stack(
-                children: const [
-                  Image(
-                    width: 400,
-                    image: AssetImage("images/home_page_1.png"),
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment(0.0, -0.8),
-                  ),
-                ],
-              ),
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  elevation: MaterialStateProperty.all(0)),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MagzineExamplePage()));
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.transparent,
+              onSurface: Colors.transparent,
+              shadowColor: Colors.transparent,
+              splashFactory: NoSplash.splashFactory,
+              elevation: 0,
+            ),
+            child: Stack(
+              children: const [
+                Image(
+                  height: 300,
+                  width: double.infinity,
+                  image: AssetImage("images/home_page_mag_3.jpeg"),
+                  fit: BoxFit.fitWidth,
+                ),
+              ],
             ),
           ),
-          const SizedBox(height: 20),
-          Container(
-            height: 300,
-            color: Colors.transparent,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Stack(
-                children: const [
-                  Image(
-                    width: 400,
-                    image: AssetImage("images/home_page_1.png"),
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment(0.0, -0.8),
-                  ),
-                ],
-              ),
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  elevation: MaterialStateProperty.all(0)),
-            ),
-          )
         ],
       ),
+    );
+  }
+}
+
+class MagzineExamplePage extends StatelessWidget {
+  const MagzineExamplePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Magzine Example Page")),
     );
   }
 }
