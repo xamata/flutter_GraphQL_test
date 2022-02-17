@@ -72,7 +72,7 @@ class _SettingsPageState extends State<SettingsPage> {
         child: Row(
           children: const [
             Text(
-              "Cusotomer Service",
+              "Customer Service",
               style: TextStyle(fontSize: 18, color: Colors.black),
             ),
             Spacer(),
