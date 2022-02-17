@@ -8,8 +8,6 @@ import 'package:flutter_mobile_sim_test_1/settings_page.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'home_page.dart';
 
-import 'products_page.dart';
-
 const productsGraphQL = """
 query products{
   products(channel: "default-channel",first:10)
