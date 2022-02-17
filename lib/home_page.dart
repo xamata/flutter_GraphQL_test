@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: const Text('Home',
             style: TextStyle(color: Colors.black, fontSize: 24)),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
       ),
       body: SafeArea(
         child: ListView(
@@ -24,7 +24,8 @@ class _HomePageState extends State<HomePage> {
             box1UI(),
             const SizedBox(height: 20),
             box2UI(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 5),
+            sliderTitleUI(),
             sliderUI(),
             const SizedBox(height: 20),
             box3UI(),
@@ -43,24 +44,61 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget box1UI() {
-    return SizedBox(
+    return Container(
       height: 300,
+      color: Colors.transparent,
       child: ElevatedButton(
         onPressed: () {},
-        child: Expanded(child: Container(color: Colors.green)),
+        child: Stack(
+          children: const [
+            Image(
+              width: 400,
+              image: AssetImage("images/home_page_1.png"),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment(0.0, -0.8),
+            ),
+          ],
+        ),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0)),
       ),
     );
   }
 
   Widget box2UI() {
-    return SizedBox(
+    return Container(
       height: 300,
+      color: Colors.transparent,
       child: ElevatedButton(
         onPressed: () {},
-        child: Container(
-          padding: const EdgeInsets.all(0.0),
-          color: Colors.yellow,
-          width: double.infinity,
+        child: Stack(
+          children: const [
+            Image(
+              width: 400,
+              image: AssetImage("images/home_page_2.png"),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment(0.0, -0.8),
+            ),
+          ],
+        ),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0)),
+      ),
+    );
+  }
+
+  Widget sliderTitleUI() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+      child: Container(
+        child: const Text(
+          "Categories",
+          style: TextStyle(
+            fontSize: 20,
+          ),
+          textAlign: TextAlign.start,
         ),
       ),
     );
@@ -68,65 +106,164 @@ class _HomePageState extends State<HomePage> {
 
   Widget sliderUI() {
     return Container(
-      alignment: Alignment.centerLeft,
-      child: Column(
-        children: [
-          const Text(
-            "Categories",
-            style: TextStyle(
-              fontSize: 20,
-            ),
-            textAlign: TextAlign.start,
+      height: 100,
+      child: ElevatedButtonTheme(
+        data: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.orange.shade100,
+            shape: CircleBorder(),
+            onPrimary: Colors.black,
+            elevation: 0,
           ),
-          SizedBox(
-            height: 50,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit),
-                  label: const Text("Men"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit),
-                  label: const Text("Women"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit),
-                  label: const Text("Boys"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit),
-                  label: const Text("Girls"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit),
-                  label: const Text("Men"),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit),
-                  label: const Text("Men"),
-                ),
-              ],
+        ),
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Container(
+              width: 90,
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Men"),
+                    ),
+                  ),
+                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
+                  Text(
+                    "Hoodies & Sweatshirts",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
             ),
-          )
-        ],
+            Container(
+              width: 90,
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Men"),
+                    ),
+                  ),
+                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
+                  Text(
+                    "Hoodies & Sweatshirts",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: 90,
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Men"),
+                    ),
+                  ),
+                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
+                  Text(
+                    "Hoodies & Sweatshirts",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: 90,
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Men"),
+                    ),
+                  ),
+                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
+                  Text(
+                    "Hoodies & Sweatshirts",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: 90,
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Men"),
+                    ),
+                  ),
+                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
+                  Text(
+                    "Hoodies & Sweatshirts",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: 90,
+              child: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Men"),
+                    ),
+                  ),
+                  Text("Men", style: TextStyle(color: Colors.grey.shade700)),
+                  Text(
+                    "Hoodies & Sweatshirts",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget box3UI() {
-    return SizedBox(
+    return Container(
       height: 300,
+      color: Colors.transparent,
       child: ElevatedButton(
         onPressed: () {},
-        child: Container(color: Colors.green),
+        child: Stack(
+          children: const [
+            Image(
+              width: 400,
+              image: AssetImage("images/home_page_1.png"),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment(0.0, -0.8),
+            ),
+          ],
+        ),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0)),
       ),
     );
   }
@@ -306,21 +443,47 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget box4UI() {
-    return SizedBox(
+    return Container(
       height: 300,
+      color: Colors.transparent,
       child: ElevatedButton(
         onPressed: () {},
-        child: Container(color: Colors.green),
+        child: Stack(
+          children: const [
+            Image(
+              width: 400,
+              image: AssetImage("images/home_page_1.png"),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment(0.0, -0.8),
+            ),
+          ],
+        ),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0)),
       ),
     );
   }
 
   Widget box5UI() {
-    return SizedBox(
+    return Container(
       height: 300,
+      color: Colors.transparent,
       child: ElevatedButton(
         onPressed: () {},
-        child: Container(color: Colors.green),
+        child: Stack(
+          children: const [
+            Image(
+              width: 400,
+              image: AssetImage("images/home_page_1.png"),
+              fit: BoxFit.fitWidth,
+              alignment: Alignment(0.0, -0.8),
+            ),
+          ],
+        ),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            elevation: MaterialStateProperty.all(0)),
       ),
     );
   }
@@ -332,49 +495,105 @@ class _HomePageState extends State<HomePage> {
       height: 1350,
       width: double.infinity,
       child: ListView(
-        physics: ClampingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         shrinkWrap: true,
         children: [
           // const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
             child: Text(
               "Magazine",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(
+          Container(
             height: 300,
+            color: Colors.transparent,
             child: ElevatedButton(
               onPressed: () {},
-              child: Container(color: Colors.green),
+              child: Stack(
+                children: const [
+                  Image(
+                    width: 400,
+                    image: AssetImage("images/home_page_1.png"),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment(0.0, -0.8),
+                  ),
+                ],
+              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  elevation: MaterialStateProperty.all(0)),
             ),
           ),
           const SizedBox(height: 20),
-          SizedBox(
+          Container(
             height: 300,
+            color: Colors.transparent,
             child: ElevatedButton(
               onPressed: () {},
-              child: Container(color: Colors.green),
+              child: Stack(
+                children: const [
+                  Image(
+                    width: 400,
+                    image: AssetImage("images/home_page_1.png"),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment(0.0, -0.8),
+                  ),
+                ],
+              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  elevation: MaterialStateProperty.all(0)),
             ),
           ),
           const SizedBox(height: 20),
-          SizedBox(
+          Container(
             height: 300,
+            color: Colors.transparent,
             child: ElevatedButton(
               onPressed: () {},
-              child: Container(color: Colors.green),
+              child: Stack(
+                children: const [
+                  Image(
+                    width: 400,
+                    image: AssetImage("images/home_page_1.png"),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment(0.0, -0.8),
+                  ),
+                ],
+              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  elevation: MaterialStateProperty.all(0)),
             ),
           ),
           const SizedBox(height: 20),
-          SizedBox(
+          Container(
             height: 300,
+            color: Colors.transparent,
             child: ElevatedButton(
               onPressed: () {},
-              child: Container(color: Colors.green),
+              child: Stack(
+                children: const [
+                  Image(
+                    width: 400,
+                    image: AssetImage("images/home_page_1.png"),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment(0.0, -0.8),
+                  ),
+                ],
+              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.transparent),
+                  elevation: MaterialStateProperty.all(0)),
             ),
-          ),
+          )
         ],
       ),
     );
