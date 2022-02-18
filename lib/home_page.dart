@@ -47,7 +47,12 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       color: Colors.transparent,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context) => HomeWidgetExamplePage()),
+          );
+        },
         child: Stack(
           children: [
             const Image(
@@ -62,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.7, 1],
+                  stops: const [0.7, 1],
                   colors: [
                     Colors.transparent,
                     Colors.grey.withOpacity(0.5),
@@ -74,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text("Comfortably Styling",
                         style: TextStyle(
                             color: Colors.white,
@@ -103,7 +108,12 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       color: Colors.transparent,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context) => HomeWidgetExamplePage()),
+          );
+        },
         child: Stack(
           children: [
             Image(
@@ -118,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.7, 1],
+                  stops: const [0.7, 1],
                   colors: [
                     Colors.transparent,
                     Colors.grey.withOpacity(0.5),
@@ -130,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text("Soft Tailoring",
                         style: TextStyle(
                             color: Colors.white,
@@ -279,7 +289,13 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 60,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  MagazineExamplePage()),
+                        );
+                      },
                       child: const Text("Men"),
                     ),
                   ),
@@ -339,7 +355,13 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 60,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  MagazineExamplePage()),
+                        );
+                      },
                       child: const Text("Men"),
                     ),
                   ),
@@ -373,7 +395,12 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       color: Colors.transparent,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context) => HomeWidgetExamplePage()),
+          );
+        },
         child: Stack(
           children: [
             Image(
@@ -388,7 +415,7 @@ class _HomePageState extends State<HomePage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.7, 1],
+                  stops: const [0.7, 1],
                   colors: [
                     Colors.transparent,
                     Colors.grey.withOpacity(0.5),
@@ -400,7 +427,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text("Beautiful Outwear",
                         style: TextStyle(
                             color: Colors.white,
@@ -603,7 +630,12 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       color: Colors.transparent,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context) => HomeWidgetExamplePage()),
+          );
+        },
         child: Stack(
           children: [
             Image(
@@ -618,7 +650,7 @@ class _HomePageState extends State<HomePage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.7, 1],
+                  stops: const [0.7, 1],
                   colors: [
                     Colors.transparent,
                     Colors.grey.withOpacity(0.6),
@@ -630,7 +662,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text("Find your style",
                         style: TextStyle(
                             color: Colors.white,
@@ -659,7 +691,12 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       color: Colors.transparent,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (BuildContext context) => HomeWidgetExamplePage()),
+          );
+        },
         child: Stack(
           children: [
             Image(
@@ -674,7 +711,7 @@ class _HomePageState extends State<HomePage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.7, 1],
+                  stops: const [0.7, 1],
                   colors: [
                     Colors.transparent,
                     Colors.grey.withOpacity(0.5),
@@ -687,7 +724,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text("Peace of Mind",
                           style: TextStyle(
                               color: Colors.white,
@@ -733,7 +770,7 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MagzineExamplePage()));
+                  builder: (context) => const MagazineExamplePage()));
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
@@ -743,8 +780,8 @@ class _HomePageState extends State<HomePage> {
               elevation: 0,
             ),
             child: Stack(
-              children: [
-                const Image(
+              children: const [
+                Image(
                   width: 400,
                   height: 300,
                   image: AssetImage("images/home_page_mag_1.jpeg"),
@@ -758,7 +795,7 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MagzineExamplePage()));
+                  builder: (context) => const MagazineExamplePage()));
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
@@ -781,7 +818,7 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MagzineExamplePage()));
+                  builder: (context) => const MagazineExamplePage()));
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
@@ -807,13 +844,44 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class MagzineExamplePage extends StatelessWidget {
-  const MagzineExamplePage({Key? key}) : super(key: key);
+class MagazineExamplePage extends StatelessWidget {
+  const MagazineExamplePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Magzine Example Page")),
+      appBar: AppBar(
+        backgroundColor: Colors.orange.shade50,
+        foregroundColor: Colors.black,
+        title: Text("Magazine Example Page"),
+        elevation: 0,
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.orange.shade100.withOpacity(0.7),
+      ),
+    );
+  }
+}
+
+class HomeWidgetExamplePage extends StatelessWidget {
+  const HomeWidgetExamplePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange.shade50,
+        foregroundColor: Colors.black,
+        title: Text("Home Widget Example Page"),
+        elevation: 0,
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.orange.shade100.withOpacity(0.7),
+      ),
     );
   }
 }
