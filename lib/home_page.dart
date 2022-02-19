@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
-                    Text("Comfortably Styling",
+                    Text("Comfortably Stylin'",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 34,
