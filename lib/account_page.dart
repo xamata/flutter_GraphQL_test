@@ -46,10 +46,10 @@ class _AccountPageState extends State<AccountPage> {
               decoration: const BoxDecoration(
                 color: Colors.white,
                 image: DecorationImage(
-                  image: AssetImage("images/background.jpeg"),
+                  image: AssetImage("images/background_v2.jpg"),
                   fit: BoxFit.fitWidth,
                   //---------sets the position of image------------
-                  alignment: Alignment(0.0, -7.0),
+                  alignment: Alignment.bottomCenter,
                 ),
               ),
             ),
@@ -211,6 +211,7 @@ class _AccountPageState extends State<AccountPage> {
             ),
           ],
         ),
+        // bottomNavigationBar: Visibility(child: Container()),
       ),
     );
   }
