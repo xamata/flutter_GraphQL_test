@@ -211,7 +211,6 @@ class _AccountPageState extends State<AccountPage> {
             ),
           ],
         ),
-        // bottomNavigationBar: Visibility(child: Container()),
       ),
     );
   }

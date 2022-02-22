@@ -133,7 +133,12 @@ class _CartPageState extends State<CartPage> {
           ],
         ),
         RawMaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (BuildContext context) => CreateAccountPage()),
+              );
+            },
             child: const Text("Create Account",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             fillColor: Colors.white,
@@ -358,6 +363,31 @@ class ProductsGridView extends StatelessWidget {
             });
       },
     );
+  }
+}
+
+class CreateAccountPage extends StatefulWidget {
+  const CreateAccountPage({Key? key}) : super(key: key);
+
+  @override
+  CreateAccountPageState createState() => CreateAccountPageState();
+}
+
+class CreateAccountPageState extends State<CreateAccountPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Create Account", style: TextStyle(fontSize: 24)),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          elevation: 0,
+        ),
+        body: Form(
+          child: Column(
+            children: [],
+          ),
+        ));
   }
 }
 
