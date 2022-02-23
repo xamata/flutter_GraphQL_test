@@ -3,6 +3,7 @@ import 'package:flutter_mobile_sim_test_1/account_page.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:intl/intl.dart';
 
+import 'create_account_page.dart';
 import 'main.dart';
 
 class CartPage extends StatefulWidget {
@@ -136,7 +137,8 @@ class _CartPageState extends State<CartPage> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (BuildContext context) => CreateAccountPage()),
+                    builder: (BuildContext context) =>
+                        const CreateAccountPage()),
               );
             },
             child: const Text("Create Account",
@@ -366,30 +368,30 @@ class ProductsGridView extends StatelessWidget {
   }
 }
 
-class CreateAccountPage extends StatefulWidget {
-  const CreateAccountPage({Key? key}) : super(key: key);
+// class CreateAccountPage extends StatefulWidget {
+//   const CreateAccountPage({Key? key}) : super(key: key);
 
-  @override
-  CreateAccountPageState createState() => CreateAccountPageState();
-}
+//   @override
+//   CreateAccountPageState createState() => CreateAccountPageState();
+// }
 
-class CreateAccountPageState extends State<CreateAccountPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Create Account", style: TextStyle(fontSize: 24)),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          elevation: 0,
-        ),
-        body: Form(
-          child: Column(
-            children: [],
-          ),
-        ));
-  }
-}
+// class CreateAccountPageState extends State<CreateAccountPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         appBar: AppBar(
+//           title: const Text("Create Account", style: TextStyle(fontSize: 24)),
+//           backgroundColor: Colors.white,
+//           foregroundColor: Colors.black,
+//           elevation: 0,
+//         ),
+//         body: Form(
+//           child: ListView(
+//             children: [TextField()],
+//           ),
+//         ));
+//   }
+// }
 
 class GamesGridView extends StatelessWidget {
   final VoidCallback callBack;

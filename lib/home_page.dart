@@ -50,7 +50,8 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (BuildContext context) => HomeWidgetExamplePage()),
+                builder: (BuildContext context) =>
+                    const HomeWidgetExamplePage()),
           );
         },
         child: Stack(
@@ -111,12 +112,13 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (BuildContext context) => HomeWidgetExamplePage()),
+                builder: (BuildContext context) =>
+                    const HomeWidgetExamplePage()),
           );
         },
         child: Stack(
           children: [
-            Image(
+            const Image(
               width: 400,
               image: AssetImage("images/home_page_2.png"),
               fit: BoxFit.fitWidth,
@@ -293,7 +295,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  MagazineExamplePage()),
+                                  const MagazineExamplePage()),
                         );
                       },
                       child: const Text("Men"),
@@ -359,7 +361,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  MagazineExamplePage()),
+                                  const MagazineExamplePage()),
                         );
                       },
                       child: const Text("Men"),
@@ -398,12 +400,13 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (BuildContext context) => HomeWidgetExamplePage()),
+                builder: (BuildContext context) =>
+                    const HomeWidgetExamplePage()),
           );
         },
         child: Stack(
           children: [
-            Image(
+            const Image(
               width: 400,
               image: AssetImage("images/home_page_3.jpeg"),
               fit: BoxFit.fitWidth,
@@ -633,12 +636,13 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (BuildContext context) => HomeWidgetExamplePage()),
+                builder: (BuildContext context) =>
+                    const HomeWidgetExamplePage()),
           );
         },
         child: Stack(
           children: [
-            Image(
+            const Image(
               width: 400,
               image: AssetImage("images/home_page_4.jpg"),
               fit: BoxFit.fitWidth,
@@ -694,12 +698,13 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (BuildContext context) => HomeWidgetExamplePage()),
+                builder: (BuildContext context) =>
+                    const HomeWidgetExamplePage()),
           );
         },
         child: Stack(
           children: [
-            Image(
+            const Image(
               width: 400,
               image: AssetImage("images/home_page_5.jpg"),
               fit: BoxFit.fitWidth,
@@ -853,7 +858,7 @@ class MagazineExamplePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.orange.shade50,
         foregroundColor: Colors.black,
-        title: Text("Magazine Example Page"),
+        title: const Text("Magazine Example Page"),
         elevation: 0,
       ),
       body: Container(
@@ -874,7 +879,7 @@ class HomeWidgetExamplePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.orange.shade50,
         foregroundColor: Colors.black,
-        title: Text("Home Widget Example Page"),
+        title: const Text("Home Widget Example Page"),
         elevation: 0,
       ),
       body: Container(
