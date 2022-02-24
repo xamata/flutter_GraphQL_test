@@ -17,7 +17,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           appBar: AppBar(
             foregroundColor: Colors.black,
             backgroundColor: Colors.white,
-            title: Text("Create Account Page", style: TextStyle(fontSize: 24)),
+            title: const Text("Create Account", style: TextStyle(fontSize: 24)),
             elevation: 0,
           ),
           body: ListView(
