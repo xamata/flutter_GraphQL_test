@@ -59,6 +59,7 @@ class ProductsPage extends StatelessWidget {
                               height: 180,
                               child: Image.network(product["thumbnail"]["url"]),
                             ),
+                            Text(product["thumbnail"]["url"].toString()),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 8.0),
