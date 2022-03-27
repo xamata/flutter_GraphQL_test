@@ -882,10 +882,21 @@ class HomeWidgetExamplePage extends StatelessWidget {
         title: const Text("Home Widget Example Page"),
         elevation: 0,
       ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.orange.shade100.withOpacity(0.7),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: Colors.orange.shade100.withOpacity(0.7),
+            child: ListView(
+              children: [
+                Container(
+                  width: 20,
+                  height: 300,
+                  color: Colors.red,
+                )
+              ],
+            )),
       ),
     );
   }
