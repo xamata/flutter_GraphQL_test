@@ -893,7 +893,7 @@ class HomeWidgetExamplePage extends StatelessWidget {
                 Container(
                   width: 20,
                   height: 300,
-                  color: Colors.white,
+                  color: Colors.blue,
                 )
               ],
             )),
