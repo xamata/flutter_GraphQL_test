@@ -36,16 +36,35 @@ query products{
 }
 """;
 
+const productsGraphQL2 = """
+query {
+  allBooks{
+  id
+  title
+  author
+  review
+  cover
+  }
+}
+""";
 void main() {
   final HttpLink httpLink = HttpLink("https://demo.saleor.io/graphql/");
+  final HttpLink httpLink2 = HttpLink("http://127.0.0.1:8000/graphql/");
 
   ValueNotifier<GraphQLClient> client = ValueNotifier(GraphQLClient(
       //cached theboy using store:HiveStore
       cache: GraphQLCache(store: InMemoryStore()),
       link: httpLink));
 
+  ValueNotifier<GraphQLClient> client2 = ValueNotifier(GraphQLClient(
+      //cached theboy using store:HiveStore
+      cache: GraphQLCache(store: InMemoryStore()),
+      link: httpLink2));
+
   var zapp = GraphQLProvider(client: client, child: const MyApp());
-  runApp(zapp);
+  var zappy = GraphQLProvider(client: client2, child: const MyApp());
+  // runApp(zapp);
+  runApp(zappy);
 }
 
 class MyApp extends StatelessWidget {

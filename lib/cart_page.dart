@@ -263,7 +263,10 @@ class _CartPageState extends State<CartPage> {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 8.0),
-        ProductsGridView(),
+        // ProductsGridView(),
+        // SizedBox(height: 800),
+        ProductsGridView2(),
+        // ProductsGridView2(),
       ],
     );
   }
@@ -360,6 +363,63 @@ class ProductsGridView extends StatelessWidget {
                     formatCurrency.format(productAmount),
                     style: Theme.of(context).textTheme.subtitle1,
                   )
+                ],
+              );
+            });
+      },
+    );
+  }
+}
+
+class ProductsGridView2 extends StatelessWidget {
+  const ProductsGridView2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Query(
+      options: QueryOptions(
+        document: gql(productsGraphQL2),
+      ),
+      builder: (QueryResult result, {fetchMore, refetch}) {
+        if (result.hasException) {
+          return Text(result.exception.toString());
+        }
+
+        if (result.isLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
+        final productList = result.data?["allBooks"];
+        // return Image(
+        //   image: AssetImage("images/" + productCover.toString()),
+        // );
+        return GridView.builder(
+            shrinkWrap: true,
+            physics: const ClampingScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 2,
+                crossAxisSpacing: 2,
+                childAspectRatio: 0.62),
+            itemCount: productList.length,
+            itemBuilder: (context, index) {
+              var product = productList[index];
+              var productCover = product["cover"];
+              return Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        // vertical: 10.0,
+                        ),
+                    child: Image.asset("images/" + productCover.toString()),
+                    // Image(
+                    //   image: AssetImage("images/" + productCover),
+                    // )
+                    // Image.network(product["thumbnail"]["url"]),
+                  ),
+                  Text(product["title"])
                 ],
               );
             });

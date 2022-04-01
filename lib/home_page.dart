@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobile_sim_test_1/products_page.dart';
+import 'products_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -894,7 +896,7 @@ class HomeWidgetExamplePage extends StatelessWidget {
                   width: 20,
                   height: 300,
                   color: Colors.blue,
-                )
+                ),
               ],
             )),
       ),
