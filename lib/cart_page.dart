@@ -391,7 +391,7 @@ class ProductsGridView2 extends StatelessWidget {
           );
         }
 
-        final productList = result.data?["allBooks"];
+        final productList = result.data?["allProducts"];
         // return Image(
         //   image: AssetImage("images/" + productCover.toString()),
         // );
@@ -406,20 +406,22 @@ class ProductsGridView2 extends StatelessWidget {
             itemCount: productList.length,
             itemBuilder: (context, index) {
               var product = productList[index];
-              var productCover = product["cover"];
+              var productCover = product["image"];
               return Column(
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
                         // vertical: 10.0,
                         ),
-                    child: Image.asset("images/" + productCover.toString()),
+                    child: Image.asset(
+                      "images/" + productCover.toString(),
+                    ),
                     // Image(
                     //   image: AssetImage("images/" + productCover),
                     // )
                     // Image.network(product["thumbnail"]["url"]),
                   ),
-                  Text(product["title"])
+                  Text(product["name"])
                 ],
               );
             });

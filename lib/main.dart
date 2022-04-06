@@ -37,13 +37,19 @@ query products{
 """;
 
 const productsGraphQL2 = """
-query {
-  allBooks{
-  id
-  title
-  author
-  review
-  cover
+query{
+  allProducts{
+    name
+    brand
+    image
+    category
+    description
+    rating
+    numReviews
+    price
+    countInStock
+    createdAt
+    Id
   }
 }
 """;
