@@ -50,6 +50,7 @@ query{
     countInStock
     createdAt
     Id
+    url
   }
 }
 """;

@@ -406,20 +406,21 @@ class ProductsGridView2 extends StatelessWidget {
             itemCount: productList.length,
             itemBuilder: (context, index) {
               var product = productList[index];
-              var productCover = product["image"];
+              var productUrl = product["url"];
               return Column(
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
                         // vertical: 10.0,
                         ),
-                    child: Image.asset(
-                      "images/" + productCover.toString(),
-                    ),
-                    // Image(
-                    //   image: AssetImage("images/" + productCover),
-                    // )
-                    // Image.network(product["thumbnail"]["url"]),
+                    child:
+                        // Image.asset(
+                        //   "images/" + productCover.toString(),
+                        // ),
+                        // Image(
+                        //   image: AssetImage("images/" + productCover),
+                        // )
+                        Image.network(productUrl),
                   ),
                   Text(product["name"])
                 ],
