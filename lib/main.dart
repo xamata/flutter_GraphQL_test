@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.person), label: "Account"),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.heart), label: "Favorite"),
+              icon: Icon(CupertinoIcons.heart), label: "Favorites"),
           BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.shopping_cart), label: "Cart"),
           BottomNavigationBarItem(
